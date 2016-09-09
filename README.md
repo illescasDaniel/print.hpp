@@ -1,6 +1,7 @@
 # print.h
 
-Display most data types, like std::vector, in one line.
+A replacement for the 'cout' function.   
+With 'print' you can display information easily, and also supports data types like std::vector.
 <br></br>
 
 · **print function syntax:**  
