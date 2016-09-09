@@ -1,10 +1,7 @@
-#include <iostream>
 #include <vector>
 #include "print.h"
 
-using namespace std;
-
-int main(int argc, const char * argv[]) {
+int main() {
 	
 	// Classic way...
 	vector<int> vect1 = {1,2,3,4};

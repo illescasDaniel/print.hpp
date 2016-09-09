@@ -1,7 +1,9 @@
 # print.h
 
-A replacement for the 'cout' function.   
-With 'print' you can display information easily, also supports data types like std::vector, std::array, etc.
+A replacement for the 'cout' function.  
+
+Using 'print' you can display information easily.  
+The 'to_string' function that I implemented let you convert containers (like std::vector) to string.
 <br></br>
 
 · **print function syntax:**  
