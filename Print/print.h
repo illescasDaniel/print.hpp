@@ -15,20 +15,20 @@ void print(const Type& value) {
 	cout << value << endl;
 }
 
-template<typename Type, typename... Args>
+template<typename Type, typename ... Args>
 void print(const Type& value, const Args& ...args) {
 	cout << value << ' ';
-	print(args...) ;
+	print(args...);
 }
 
 /* TO_STRING functions */
 
 // Return a string given a container (vector, array, list...)
-template <class container>
-string to_string(const container& cont) {
+template <class Container>
+string to_string(const Container& cont) {
 	
 	string str;
-	unsigned int position = 0;
+	size_t position = 0;
 	
 	str += "[";
 	
@@ -55,7 +55,7 @@ string to_string(const T * array, size_t size) {
 	
 	str += "[";
 	
-	for (int i = 0; i < size; i++) {
+	for (size_t i = 0; i < size; i++) {
 		str += to_string(array[i]);
 		
 		if (i+1 < size) {

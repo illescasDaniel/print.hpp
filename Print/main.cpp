@@ -16,9 +16,10 @@ int main() {
 	// New way
 	print("Vector:", to_string(vect1));
 	
-	int array[6] = {1,2,3,4,5,6};
+	const int size = 6;
+	int array[size] = {1,2,3,4,5,6};
 	
-	print("My array:", to_string(array,6));
+	print("My array:", to_string(array,size));
 	
 	print("Random number:", arc4random_uniform(1000));
 	
