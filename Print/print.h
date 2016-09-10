@@ -68,4 +68,36 @@ string to_string(const Type * array, size_t size) {
 	return str;
 }
 
+// Return a string given a matrix and its size
+template <typename Type>
+string to_string(const Type& matrix, size_t rows, size_t cols) {
+	
+	string str;
+	
+	str += "[";
+	
+	for (size_t i = 0; i < rows; i++) {
+		str += "[";
+		for (size_t j = 0; j < cols; j++) {
+			str += to_string(matrix[i][j]);
+			
+			if (j+1 < cols) {
+				str += ", ";
+			}
+		}
+		
+		if (i+1 < rows) {
+			str += "], ";
+		}
+		else {
+			str += "]";
+		}
+		
+	}
+	
+	str += "]";
+	
+	return str;
+}
+
 #endif /* print_h */
