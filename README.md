@@ -23,12 +23,12 @@ to_string(const container& cont);
 
 · Example:  
 ```c++
-to_string(vector1); // Possible output -> [1,2,3]
+to_string(vector1); 
 ```
 
 · Example using both functions:  
 ```c++
-print("This is my vector:", to_string(vector1));
+print("My vector:", to_string(vector1)); // Possible output -> My vector: [1,2,3]
 ```
 <br></br>
 · **to_string function syntax for classic arrays:**  
