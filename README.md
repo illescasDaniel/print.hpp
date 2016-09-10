@@ -13,17 +13,17 @@ print(const Type& value, const Args& ...args);
 
 · Example:  
 ```c++
-print("This is a number:", 23123);
+print("This is a number:", 23123); // Output -> This is a number: 23123
 ```
 <br></br>
 · **to_string function syntax for containers:**  
 ```c++
-to_string(const container& cont);
+to_string(const container& cont); 
 ```
 
 · Example:  
 ```c++
-to_string(vector1);
+to_string(vector1); // Possible output -> [1,2,3]
 ```
 
 · Example using both functions:  
