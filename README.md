@@ -16,7 +16,7 @@ print(const Type& value, const Args& ...args);
 print("This is a number:", 23123);
 ```
 <br></br>
-· **to_string function syntax for std containers:**  
+· **to_string function syntax for containers:**  
 ```c++
 to_string(const container& cont);
 ```

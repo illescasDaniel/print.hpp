@@ -24,7 +24,7 @@ void print(const Type& value, const Args& ...args) {
 /* TO_STRING functions */
 
 // Return a string given a container (vector, array, list...)
-template <class Container>
+template <typename Container>
 string to_string(const Container& cont) {
 	
 	string str;
@@ -48,8 +48,8 @@ string to_string(const Container& cont) {
 }
 
 // Return a string given a classic array and its size
-template <class T>
-string to_string(const T * array, size_t size) {
+template <typename Type>
+string to_string(const Type * array, size_t size) {
 	
 	string str;
 	
