@@ -48,5 +48,18 @@ int main() {
 	}
 	delete[] matrix;
 	
+	// Map
+	map<string,int> dic;
+	dic["hola"] = 10;
+	dic["adios"] = 20;
+	
+	print(to_string(dic));
+	
+	map<float,string> dic2;
+	dic2[1.20] = "low";
+	dic2[100.8] = "high";
+	
+	print(to_string(dic2));
+	
     return 0;
 }

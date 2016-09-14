@@ -52,3 +52,13 @@ to_string(const Type& matrix, size_t rows, size_t cols);
 print(to_string(matrix,rows,cols)); // An output -> [[1, 2], [3, 4], [5, 6]]
 ```
 
+<br></br>
+· **to_string for maps:**  
+```c++
+to_string(const map<Key, Type>& map);
+```
+
+· Example:  
+```c++
+print(to_string(map)); // An output -> ["hi": 20, "bye": 10]
+```

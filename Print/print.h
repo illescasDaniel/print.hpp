@@ -5,6 +5,7 @@
 #define print_h
 
 #include <iostream>
+#include <map>
 
 using namespace std;
 
@@ -23,6 +24,11 @@ void print(const Type& value, const Args& ...args) {
 
 /* TO_STRING functions */
 
+// Stub function (don't use externally) (useful when trying to pass a string to the 'to_string' function, to avoid problems)
+string to_string(string str) {
+	return str;
+}
+
 // Return a string given a container (vector, array, list...)
 template <typename Container>
 string to_string(const Container& cont) {
@@ -32,10 +38,49 @@ string to_string(const Container& cont) {
 	
 	str += "[";
 	
-	for (auto values: cont) {
-		str += to_string(values);
+	for (auto value: cont) {
+		str += to_string(value);
 		
 		if (position+1 < cont.size()) {
+			str += ", ";
+		}
+		
+		position++;
+	}
+	
+	str += "]";
+	
+	return str;
+}
+
+// Return a string given a map
+template <typename Key, typename Type>
+string to_string(const map<Key, Type>& map) {
+
+	string str, key, type;
+	size_t position = 0;
+	
+	str += "[";
+	
+	for (auto value: map) {
+		
+		if (typeid(value.first) == typeid(string)) {
+			key = "\"" + to_string(value.first) + "\"";
+		}
+		else {
+			key = to_string(value.first);
+		}
+
+		if (typeid(value.second) == typeid(string)) {
+			type = "\"" + to_string(value.second) + "\"";
+		}
+		else {
+			type = to_string(value.second);
+		}
+		
+		str += to_string(key) + ": " + to_string(type);
+		
+		if (position+1 < map.size()) {
 			str += ", ";
 		}
 		
