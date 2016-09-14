@@ -55,7 +55,7 @@ print(to_string(matrix,rows,cols)); // An output -> [[1, 2], [3, 4], [5, 6]]
 <br></br>
 · **to_string for maps:**  
 ```c++
-to_string(const map<Key, Type>& map);
+to_string(const map<Key,Type>& map);
 ```
 
 · Example:  

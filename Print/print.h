@@ -55,7 +55,7 @@ string to_string(const Container& cont) {
 
 // Return a string given a map
 template <typename Key, typename Type>
-string to_string(const map<Key, Type>& map) {
+string to_string(const map<Key,Type>& map) {
 
 	string str, key, type;
 	size_t position = 0;
