@@ -3,10 +3,10 @@
 A replacement for the 'cout' function.  
 
 Using 'print' you can display information easily.  
-The 'to_string' function that I implemented let you convert containers (like std::vector) to string.
+The 'to_string' function that I implemented let you convert ANY data container (like std::vector) to string.
 <br></br>
 
-Syntax
+Syntax examples
 -----
 
 · **print:**  
@@ -20,7 +20,7 @@ print("This is a number:", 23123); // Output -> This is a number: 23123
 ```
 
 <br></br>
-· **to_string for containers:**  
+· **to_string for containers like std::vector, std::array...:**  
 ```c++
 to_string(const container& cont); 
 ```
@@ -62,3 +62,5 @@ to_string(const map<Key,Type>& map);
 ```c++
 print(to_string(map)); // An output -> ["hi": 20, "bye": 10]
 ```
+
+// Etc
