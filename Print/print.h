@@ -38,7 +38,7 @@ string to_string(const char& chr) {
 	return string(1,chr);
 }
 
-// Return a quoted string IF the data is a string
+// Return a single or double quoted string IF the data is a string or a char
 template <typename Type>
 string quotedString(const Type& data) {
 	
