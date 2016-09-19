@@ -1,8 +1,8 @@
 //  print.hpp
 //  Created by Daniel Illescas Romero on 09/09/2016.
 
-#ifndef print_h
-#define print_h
+#ifndef print_hpp
+#define print_hpp
 
 #include <iostream>
 #include <map>
@@ -277,4 +277,4 @@ string to_string(stack<Type> stack) {
 	return str;
 }
 
-#endif /* print_h */
+#endif /* print_hpp */
