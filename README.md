@@ -2,8 +2,8 @@
 
 A replacement for the 'cout' function.  
 
-Using 'print' you can display information easily.  
-The 'to_string' function that I implemented let you convert ANY data container (like std::vector) to string.
+With the 'print' function you can display information easily.  
+The 'to_string' function let you convert ANY data container (like std::vector) to string.
 <br></br>
 
 Syntax examples
