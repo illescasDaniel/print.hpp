@@ -10,6 +10,7 @@
 #include <queue>
 #include <stack>
 #include <forward_list>
+#include <typeinfo> // some compilers need this, not really needed with clang in xcode...
 
 using namespace std;
 

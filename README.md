@@ -62,3 +62,15 @@ print(to_string(map)); // An output -> ["hi": 20, "bye": 10]
 ```
 
 // Etc
+<br></br>
+How to compile:
+-----
+```bash
+g++ -std=c++14 main.cpp print.hpp
+```
+
+or  
+
+```bash
+g++ -std=c++14 main.cpp -I . // "." or the folder containing "print.hpp"
+```
