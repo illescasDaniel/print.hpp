@@ -1,7 +1,5 @@
 # print.hpp
 
-A replacement for the 'cout' function.  
-
 With the 'print' function you can display information easily.  
 The 'to_string' function let you convert ANY data container (like std::vector) to string.
 <br></br>
