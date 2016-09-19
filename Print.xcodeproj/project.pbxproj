@@ -25,7 +25,7 @@
 /* Begin PBXFileReference section */
 		6519A28C1D82D8B100744BE5 /* Print */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Print; sourceTree = BUILT_PRODUCTS_DIR; };
 		6519A2961D82D8EF00744BE5 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		6519A2971D82D8EF00744BE5 /* print.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = print.h; sourceTree = "<group>"; };
+		6519A2971D82D8EF00744BE5 /* print.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = print.hpp; sourceTree = "<group>"; };
 		6519A2991D82D94900744BE5 /* LICENCE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE; sourceTree = "<group>"; };
 		6519A29A1D82D94900744BE5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,7 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				6519A2961D82D8EF00744BE5 /* main.cpp */,
-				6519A2971D82D8EF00744BE5 /* print.h */,
+				6519A2971D82D8EF00744BE5 /* print.hpp */,
 			);
 			path = Print;
 			sourceTree = "<group>";
@@ -226,6 +226,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				DEVELOPMENT_TEAM = PRK6268SLD;
+				HEADER_SEARCH_PATHS = /usr/local/boost_1_61_0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -236,6 +237,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				DEVELOPMENT_TEAM = PRK6268SLD;
+				HEADER_SEARCH_PATHS = /usr/local/boost_1_61_0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

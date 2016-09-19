@@ -1,4 +1,4 @@
-//  print.h
+//  print.hpp
 //  Created by Daniel Illescas Romero on 09/09/2016.
 
 #ifndef print_h
@@ -20,7 +20,7 @@ void print(const Type& value) {
 	cout << value << endl;
 }
 
-template<typename Type, typename ... Args>
+template <typename Type, typename ... Args>
 void print(const Type& value, const Args& ...args) {
 	cout << value << ' ';
 	print(args...);
@@ -186,7 +186,7 @@ string to_string(const Type& matrix, size_t rows, size_t cols) {
 
 			str += quotedString(matrix[i][j]);
 			
-			if (j+1 < cols) {
+			if (j + 1 < cols) {
 				str += ", ";
 			}
 		}
