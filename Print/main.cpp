@@ -2,6 +2,7 @@
 #include <list>
 #include <deque>
 #include <initializer_list>
+#include <forward_list>
 #include <set>
 #include <unordered_set>
 #include "print.hpp"

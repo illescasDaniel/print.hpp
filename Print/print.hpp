@@ -9,7 +9,6 @@
 #include <unordered_map>
 #include <queue>
 #include <stack>
-#include <forward_list>
 #include <typeinfo> // some compilers need this, not really needed with clang in xcode...
 
 using namespace std;
@@ -54,10 +53,11 @@ string quotedString(const Type& data) {
 	}
 }
 
-// Return a string given a container (vector, array, list, initializer_list, deque, set, multiset, unordered_set)
+// Return a string given a container (vector, array, list, initializer_list, deque, set, multiset, unordered_set, forward list)
 template <typename Container>
 string to_string(const Container& cont) {
 	
+	size_t size = distance(cont.begin(), cont.end()); // Necessary for forward_list, because it doesn't have a size function
 	string str;
 	size_t position = 0;
 	
@@ -67,37 +67,12 @@ string to_string(const Container& cont) {
 
 		str += quotedString(value);
 		
-		if (position + 1 < cont.size()) {
-			str += ", ";
-		}
-		position++;
-	}
-	
-	str += "]";
-	
-	return str;
-}
-
-// Return a string given a forward list
-template <typename Type>
-string to_string(const forward_list<Type>& fl) {
-	
-	size_t size = distance(fl.begin(), fl.end());
-	size_t position = 0;
-	string str;
-	
-	str += "[";
-	
-	for (Type value: fl) {
-		
-		str += quotedString(value);
-		
 		if (position + 1 < size) {
 			str += ", ";
 		}
 		position++;
 	}
-
+	
 	str += "]";
 	
 	return str;
@@ -230,19 +205,18 @@ string to_string(queue<Type> queue) {
 	return str;
 }
 
-// Return a string given a priority queue (creates a copy of the queue)
-template <typename Type, typename Container, typename Compare>
-string to_string(priority_queue<Type,Container,Compare> pqueue) {
-	
+// Return a string given a priority queue or a stack
+template <typename Type>
+string to_stringPriorityQueueORstack(Type& pqstack) {
 	string str;
-	size_t originalSize = pqueue.size();
+	size_t originalSize = pqstack.size();
 	
 	str += "[";
 	
 	for (size_t idx = 0; idx < originalSize; idx++) {
 		
-		str += quotedString(pqueue.top());
-		pqueue.pop();
+		str += quotedString(pqstack.top());
+		pqstack.pop();
 		
 		if (idx + 1 < originalSize) {
 			str += ", ";
@@ -254,28 +228,16 @@ string to_string(priority_queue<Type,Container,Compare> pqueue) {
 	return str;
 }
 
+// Return a string given a priority queue (creates a copy of the queue)
+template <typename Type, typename Container, typename Compare>
+string to_string(priority_queue<Type,Container,Compare> pqueue) {
+	return to_stringPriorityQueueORstack(pqueue);
+}
+
 // Return a string given a stack (creates a copy of the stack)
 template <typename Type>
 string to_string(stack<Type> stack) {
-	
-	string str;
-	size_t originalSize = stack.size();
-	
-	str += "[";
-	
-	for (size_t idx = 0; idx < originalSize; idx++) {
-		
-		str += quotedString(stack.top());
-		stack.pop();
-		
-		if (idx + 1 < originalSize) {
-			str += ", ";
-		}
-	}
-	
-	str += "]";
-	
-	return str;
+	return to_stringPriorityQueueORstack(stack);
 }
 
 #endif /* print_hpp */
