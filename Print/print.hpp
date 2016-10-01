@@ -78,7 +78,7 @@ string to_string(const Container& cont) {
 	return str;
 }
 
-// Return a string given any map type
+// Return a string given any map type (no need to use externally)
 template <typename mapType>
 string to_stringMAP(const mapType& map) {
 	string str;
@@ -205,7 +205,7 @@ string to_string(queue<Type> queue) {
 	return str;
 }
 
-// Return a string given a priority queue or a stack
+// Return a string given a priority queue or a stack (no need to use externally)
 template <typename Type>
 string to_stringPriorityQueueORstack(Type& pqstack) {
 	string str;
