@@ -9,7 +9,7 @@
 #include <unordered_map>
 #include <queue>
 #include <stack>
-#include <typeinfo> // some compilers need this, not really needed with clang in xcode...
+#include <typeinfo>
 
 using namespace std;
 
@@ -24,6 +24,28 @@ template <typename Type, typename ... Args>
 void print(const Type& value, const Args& ...args) {
 	cout << value << ' ';
 	print(args...);
+}
+
+// To know if a given container is a set or not (Doesn't look good, this is just a temporary way to do it) 
+template <typename Container>
+bool isSet(const Container& cont) {
+	
+	if (typeid(set<int>) == typeid(cont) || typeid(set<double>) == typeid(cont) || typeid(set<bool>) == typeid(cont) ||
+		typeid(set<float>) == typeid(cont) || typeid(set<string>) == typeid(cont) || typeid(set<char>) == typeid(cont) ||
+		
+		typeid(multiset<int>) == typeid(cont) || typeid(multiset<double>) == typeid(cont) || typeid(multiset<bool>) == typeid(cont) ||
+		typeid(multiset<float>) == typeid(cont) || typeid(multiset<string>) == typeid(cont) || typeid(multiset<char>) == typeid(cont) ||
+		
+		typeid(unordered_set<int>) == typeid(cont) || typeid(unordered_set<double>) == typeid(cont) || typeid(unordered_set<bool>) == typeid(cont) ||
+		typeid(unordered_set<float>) == typeid(cont) || typeid(unordered_set<string>) == typeid(cont) || typeid(unordered_set<char>) == typeid(cont) ||
+		
+		typeid(unordered_multiset<int>) == typeid(cont) || typeid(unordered_set<double>) == typeid(cont) || typeid(unordered_set<bool>) == typeid(cont) ||
+		typeid(unordered_set<float>) == typeid(cont) || typeid(unordered_set<string>) == typeid(cont) || typeid(unordered_set<char>) == typeid(cont)) {
+		
+		return true;
+	}
+	
+	return false;
 }
 
 /* TO_STRING functions */
@@ -58,10 +80,10 @@ template <typename Container>
 string to_string(const Container& cont) {
 	
 	size_t size = distance(cont.begin(), cont.end()); // Necessary for forward_list, because it doesn't have a size function
-	string str;
 	size_t position = 0;
+	string str;
 	
-	str += "[";
+	str += isSet(cont) ? "{" : "[";
 	
 	for (auto value: cont) {
 
@@ -73,7 +95,7 @@ string to_string(const Container& cont) {
 		position++;
 	}
 	
-	str += "]";
+	str += isSet(cont) ? "}" : "]";
 	
 	return str;
 }
