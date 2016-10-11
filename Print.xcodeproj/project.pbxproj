@@ -23,7 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		65150C641DAD9B5700D10CD4 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		65150C661DAD9D9C00D10CD4 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		6519A28C1D82D8B100744BE5 /* Print */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Print; sourceTree = BUILT_PRODUCTS_DIR; };
 		6519A2961D82D8EF00744BE5 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6519A2971D82D8EF00744BE5 /* print.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = print.hpp; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 				6519A29A1D82D94900744BE5 /* README.md */,
 				6519A28E1D82D8B100744BE5 /* Print */,
 				6519A28D1D82D8B100744BE5 /* Products */,
-				65150C641DAD9B5700D10CD4 /* .travis.yml */,
+				65150C661DAD9D9C00D10CD4 /* .travis.yml */,
 			);
 			sourceTree = "<group>";
 		};
