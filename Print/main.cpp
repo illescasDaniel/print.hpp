@@ -41,12 +41,12 @@ int main() {
 	int matr[rows][cols] = {{1,2},{3,4},{5,6}};
 	print(to_string(matr,rows,cols));
 	
-	int ** matrix = new int * [rows];
+	size_t ** matrix = new size_t * [rows];
 	for (size_t i = 0; i < rows; i++) {
-		matrix[i] = new int[cols];
+		matrix[i] = new size_t[cols];
 		
 		for (size_t j = 0; j < cols; j++) {
-			matrix[i][j] = arc4random_uniform(10000);
+			matrix[i][j] = j + i;
 		}
 	}
 
