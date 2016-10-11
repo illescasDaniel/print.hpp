@@ -17,8 +17,7 @@ int main() {
 	}
 	cout << '\n' << endl;
 	
-	// New way
-	print("Random number:", arc4random_uniform(1000));
+	// New way:
 	
 	// std::vector
 	print(to_string(vect1));
