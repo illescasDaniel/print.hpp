@@ -1,5 +1,6 @@
+sudo: required
+dist: trusty
 language: cpp
-dist: xenial
 compiler: g++
 
 install: export CXX="g++-5"
@@ -13,5 +14,7 @@ addons:
 
 notifications:
  email: false
+
+before_install: sudo apt-get update -qq
 
 script: make --directory Print
