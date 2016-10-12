@@ -23,5 +23,5 @@ notifications:
  email: false
 
 script:
-- if [ $TRAVIS_OS_NAME == linux ]; then make; fi
-- if [ $TRAVIS_OS_NAME == osx ]; then make clang; fi
+- make --directory Print
+- if [ $TRAVIS_OS_NAME == linux ]; then man gcc; fi

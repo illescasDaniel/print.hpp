@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6519A2981D82D8EF00744BE5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6519A2961D82D8EF00744BE5 /* main.cpp */; };
+		65B7E4B71DAE892F00289530 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 65B7E4B61DAE892F00289530 /* Makefile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,12 +25,12 @@
 
 /* Begin PBXFileReference section */
 		65175DEB1DADA322005E9541 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
-		65175DED1DADA9EE005E9541 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		6519A28C1D82D8B100744BE5 /* Print */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Print; sourceTree = BUILT_PRODUCTS_DIR; };
 		6519A2961D82D8EF00744BE5 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6519A2971D82D8EF00744BE5 /* print.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = print.hpp; sourceTree = "<group>"; };
 		6519A2991D82D94900744BE5 /* LICENCE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE; sourceTree = "<group>"; };
 		6519A29A1D82D94900744BE5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		65B7E4B61DAE892F00289530 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +48,6 @@
 			isa = PBXGroup;
 			children = (
 				65175DEB1DADA322005E9541 /* .travis.yml */,
-				65175DED1DADA9EE005E9541 /* Makefile */,
 				6519A2991D82D94900744BE5 /* LICENCE */,
 				6519A29A1D82D94900744BE5 /* README.md */,
 				6519A28E1D82D8B100744BE5 /* Print */,
@@ -66,6 +66,7 @@
 		6519A28E1D82D8B100744BE5 /* Print */ = {
 			isa = PBXGroup;
 			children = (
+				65B7E4B61DAE892F00289530 /* Makefile */,
 				6519A2961D82D8EF00744BE5 /* main.cpp */,
 				6519A2971D82D8EF00744BE5 /* print.hpp */,
 			);
@@ -130,6 +131,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65B7E4B71DAE892F00289530 /* Makefile in Sources */,
 				6519A2981D82D8EF00744BE5 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
