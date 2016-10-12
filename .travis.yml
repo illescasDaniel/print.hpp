@@ -1,16 +1,8 @@
-sudo: false
 language: cpp
 dist: xenial
-compiler:
-- if [ $TRAVIS_OS_NAME == linux ]; then g++; fi
-- if [ $TRAVIS_OS_NAME == osx ]; then clang; fi
+compiler: g++
 
-os:
-- linux
-- osx
-
-install:
-- if [ $TRAVIS_OS_NAME == linux ]; then export CXX="g++-5" CC="gcc-5"; fi
+install: export CXX="g++-5"
 
 addons:
   apt:
@@ -22,5 +14,4 @@ addons:
 notifications:
  email: false
 
-script:
-- make --directory Print
+script: make --directory Print
