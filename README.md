@@ -1,8 +1,8 @@
 # print.hpp 
 
 [![Build Status](https://travis-ci.org/illescasDaniel/print.hpp.svg?branch=master)](https://travis-ci.org/illescasDaniel/print.hpp)
-![Version](https://img.shields.io/badge/version-v1.0-blue.svg)
-![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)  
+[![Version](https://img.shields.io/badge/version-v1.0-blue.svg)](https://github.com/illescasDaniel/print.hpp/releases/tag/v1.0)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/illescasDaniel/print.hpp/blob/master/LICENCE)  
 
 With the 'print' function you can display information easily.  
 The 'to_string' function let you convert ANY data container (like std::vector) to string.
