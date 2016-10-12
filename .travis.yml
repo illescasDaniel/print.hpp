@@ -2,7 +2,7 @@ sudo: false
 language: cpp
 dist: xenial
 compiler:
-- if [ $TRAVIS_OS_NAME == linux ]; then gcc; fi
+- if [ $TRAVIS_OS_NAME == linux ]; then g++; fi
 - if [ $TRAVIS_OS_NAME == osx ]; then clang; fi
 
 os:
@@ -10,7 +10,7 @@ os:
 - osx
 
 install:
-- if [ $TRAVIS_OS_NAME == linux ] && [ "$CXX" = "g++" ]; then export CXX="g++-5" CC="gcc-5"; fi
+- if [ $TRAVIS_OS_NAME == linux ]; then export CXX="g++-5" CC="gcc-5"; fi
 
 addons:
   apt:
@@ -24,4 +24,3 @@ notifications:
 
 script:
 - make --directory Print
-- if [ $TRAVIS_OS_NAME == linux ]; then man gcc; fi
