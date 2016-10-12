@@ -1,4 +1,6 @@
-# print.hpp
+# print.hpp 
+
+[![Build Status](https://travis-ci.org/illescasDaniel/print.hpp.svg?branch=master)](https://travis-ci.org/illescasDaniel/print.hpp)  
 
 With the 'print' function you can display information easily.  
 The 'to_string' function let you convert ANY data container (like std::vector) to string.

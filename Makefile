@@ -1,5 +1,5 @@
 all:
-	$(CXX) -pthread -std=c++11 -Wall -Wextra Print/main.cpp -I Print -o example
+	$(CXX) -pthread -std=c++14 -O2 -Wall -Wextra Print/main.cpp -I Print -o printExample
 
 test:
-	 ./example
+	 ./printExample
