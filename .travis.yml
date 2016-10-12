@@ -1,22 +1,13 @@
 sudo: false
 language: cpp
-dist: trusty
+dist: xenial
 compiler:
-- gcc
-- clang
+- if [ $TRAVIS_OS_NAME == linux ]; then gcc; fi
+- if [ $TRAVIS_OS_NAME == osx ]; then clang; fi
 
 os:
 - linux
 - osx
-
-before_install:
-- if [ $TRAVIS_OS_NAME == osx ]; then brew update && brew install llvm38 && brew install openssl && brew link --force --overwrite llvm38 && brew link --force --overwrite openssl; fi
-- if [ $TRAVIS_OS_NAME == osx ]; then gem update --system; fi
-- if [ $TRAVIS_OS_NAME == osx ]; then - gem --version; fi
-
-before_script:
-- if [ $TRAVIS_OS_NAME == osx ]; then travis_retry bundle; fi
-- if [ $TRAVIS_OS_NAME == osx ]; then travis_retry ./configure --llvm-config=llvm-config-3.8 --cc=clang-3.8 --cxx=clang++-3.8; fi
 
 install:
 - if [ $TRAVIS_OS_NAME == linux ] && [ "$CXX" = "g++" ]; then export CXX="g++-5" CC="gcc-5"; fi
@@ -26,7 +17,6 @@ addons:
     sources:
     - ubuntu-toolchain-r-test
     packages:
-    - gcc-5
     - g++-5
 
 notifications:
