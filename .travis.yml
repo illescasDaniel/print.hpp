@@ -1,27 +1,12 @@
-language: cpp
-
-compiler: clang
-
 sudo: required
+language: cpp
 dist: trusty
-
-env:
-global:
-- LLVM_VERSION=3.8.1
-- LLVM_ARCHIVE_PATH=$HOME/clang+llvm.tar.xz
+compiler: g++
 
 before_install:
-- wget http://llvm.org/releases/3.8.1/clang+llvm-3.8.1-x86_64-linux-gnu-ubuntu-16.04.tar.xz -O $LLVM_ARCHIVE_PATH
-- mkdir $HOME/clang+llvm
-- tar xf $LLVM_ARCHIVE_PATH -C $HOME/clang+llvm --strip-components 1
-- export PATH=$HOME/clang+llvm/bin:$PATH
+- sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+- sudo apt-get update -qq
 
-install:
-- clang++ --version
+install: sudo apt-get install -qq g++-5
 
-script:
-- true
-- sudo make clang
-
-notifications:
-email: false
+script: sudo make
