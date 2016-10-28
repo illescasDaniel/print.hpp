@@ -46,11 +46,11 @@
 		6519A2831D82D8B100744BE5 = {
 			isa = PBXGroup;
 			children = (
-				65175DEB1DADA322005E9541 /* .travis.yml */,
 				6519A2991D82D94900744BE5 /* LICENCE */,
 				6519A29A1D82D94900744BE5 /* README.md */,
 				6519A28E1D82D8B100744BE5 /* Print */,
 				6519A28D1D82D8B100744BE5 /* Products */,
+				65175DEB1DADA322005E9541 /* .travis.yml */,
 			);
 			sourceTree = "<group>";
 		};

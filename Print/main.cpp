@@ -149,5 +149,11 @@ int main() {
 	names2.insert({"Daniel ir", "Test two"});
 	print(to_string(names2));
 	
+	print(1 < 2, 2 > 10, 20 == 21);
+	
+	boolalphaEnabled = false;
+	
+	print(1 < 2, 2 > 10, 20 == 21);
+	
     return 0;
 }

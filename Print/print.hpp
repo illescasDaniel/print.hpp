@@ -20,8 +20,12 @@ void print(const Type& value) {
 	cout << value << endl;
 }
 
+bool boolalphaEnabled = true;
+
 template <typename Type, typename ... Args>
 void print(const Type& value, const Args& ...args) {
+	
+	boolalphaEnabled ? boolalpha(cout) : noboolalpha(cout);
 	cout << value << ' ';
 	print(args...);
 }
