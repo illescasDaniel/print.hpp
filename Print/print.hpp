@@ -1,55 +1,30 @@
 //  print.hpp
 //  Created by Daniel Illescas Romero on 09/09/2016.
 
-#ifndef print_hpp
-#define print_hpp
+#pragma once
 
 #include <iostream>
+#include <unordered_set>
+#include <set>
 #include <map>
 #include <unordered_map>
 #include <queue>
 #include <stack>
 #include <typeinfo>
-
+#include <array>
+#include <list>
+#include <initializer_list>
+#include <forward_list>
+	
 using namespace std;
 
-/* PRINT functions */
+// To know if a given container is a set or not
+#define __t(_cont_) typeid(_cont_) == typeid(cont)
+#define typesOf(_cont_) __t(_cont_<int>) || __t(_cont_<double>) || __t(_cont_<bool>) || __t(_cont_<float>) || __t(_cont_<string>) || __t(_cont_<char>)
 
-template <typename Type>
-void print(const Type& value) {
-	cout << value << endl;
-}
-
-bool boolalphaEnabled = true;
-
-template <typename Type, typename ... Args>
-void print(const Type& value, const Args& ...args) {
-	
-	boolalphaEnabled ? boolalpha(cout) : noboolalpha(cout);
-	cout << value << ' ';
-	print(args...);
-}
-
-// To know if a given container is a set or not (Doesn't look good, this is just a temporary way to do it) 
 template <typename Container>
 bool isSet(const Container& cont) {
-	
-	if (typeid(set<int>) == typeid(cont) || typeid(set<double>) == typeid(cont) || typeid(set<bool>) == typeid(cont) ||
-		typeid(set<float>) == typeid(cont) || typeid(set<string>) == typeid(cont) || typeid(set<char>) == typeid(cont) ||
-		
-		typeid(multiset<int>) == typeid(cont) || typeid(multiset<double>) == typeid(cont) || typeid(multiset<bool>) == typeid(cont) ||
-		typeid(multiset<float>) == typeid(cont) || typeid(multiset<string>) == typeid(cont) || typeid(multiset<char>) == typeid(cont) ||
-		
-		typeid(unordered_set<int>) == typeid(cont) || typeid(unordered_set<double>) == typeid(cont) || typeid(unordered_set<bool>) == typeid(cont) ||
-		typeid(unordered_set<float>) == typeid(cont) || typeid(unordered_set<string>) == typeid(cont) || typeid(unordered_set<char>) == typeid(cont) ||
-		
-		typeid(unordered_multiset<int>) == typeid(cont) || typeid(unordered_set<double>) == typeid(cont) || typeid(unordered_set<bool>) == typeid(cont) ||
-		typeid(unordered_set<float>) == typeid(cont) || typeid(unordered_set<string>) == typeid(cont) || typeid(unordered_set<char>) == typeid(cont)) {
-		
-		return true;
-	}
-	
-	return false;
+	return (typesOf(set) || typesOf(multiset) || typesOf(unordered_set) || typesOf(unordered_multiset));
 }
 
 /* TO_STRING functions */
@@ -79,7 +54,7 @@ string quotedString(const Type& data) {
 	}
 }
 
-// Return a string given a container (vector, array, list, initializer_list, deque, set, multiset, unordered_set, forward list)
+// Return a string given a container (vector, array, list, initializer_list, deque, set, multiset, unordered_set, unordered_multiset, forward list)
 template <typename Container>
 string to_string(const Container& cont) {
 	
@@ -128,29 +103,17 @@ string to_stringMAP(const mapType& map) {
 	return str;
 }
 
-// Return a string given a map
-template <typename KeyType, typename ValueType>
-string to_string(const map<KeyType,ValueType>& map) {
-	return to_stringMAP(map);
+// Return a string given any map type
+#define to_stringMAP(_map_) \
+template <typename KeyType, typename ValueType> \
+string to_string(const _map_<KeyType,ValueType>& map) { \
+	return to_stringMAP(map); \
 }
 
-// Return a string given a multimap
-template <typename KeyType, typename ValueType>
-string to_string(const multimap<KeyType,ValueType>& map) {
-	return to_stringMAP(map);
-}
-
-// Return a string given an unordered map
-template <typename KeyType, typename ValueType>
-string to_string(const unordered_map<KeyType,ValueType>& map) {
-	return to_stringMAP(map);
-}
-
-// Return a string given an unordered multimap
-template <typename KeyType, typename ValueType>
-string to_string(const unordered_multimap<KeyType,ValueType>& map) {
-	return to_stringMAP(map);
-}
+to_stringMAP(map)
+to_stringMAP(multimap)
+to_stringMAP(unordered_map)
+to_stringMAP(unordered_multimap)
 
 // Return a string given a classic array and its size
 template <typename Type>
@@ -266,4 +229,53 @@ string to_string(stack<Type> stack) {
 	return to_stringPriorityQueueORstack(stack);
 }
 
-#endif /* print_hpp */
+// "let" is a constant of any type
+// "var" is a variable of any type
+#define let const auto
+#define var auto
+
+/* Operator<< overload */
+
+#define ostreamOperator(_container_) \
+template <typename Type> \
+ostream & operator<<(ostream& os, const _container_<Type>& cont) { \
+	return os << to_string(cont); \
+}
+
+#define ostreamOperatorMap(_container_) \
+template <typename Key, typename Value> \
+ostream & operator<<(ostream& os, const _container_<Key, Value>& cont) { \
+	return os << to_string(cont); \
+}
+
+ostreamOperator(vector) ostreamOperator(list)		 ostreamOperator(forward_list)		ostreamOperator(initializer_list)
+ostreamOperator(deque)	ostreamOperator(stack)		 ostreamOperator(queue)				ostreamOperator(priority_queue)
+ostreamOperator(set)	ostreamOperator(multiset)	 ostreamOperator(unordered_set)		ostreamOperator(unordered_multiset)
+ostreamOperatorMap(map) ostreamOperatorMap(multimap) ostreamOperatorMap(unordered_map)  ostreamOperatorMap(unordered_multimap)
+
+template <typename Type, size_t size>
+ostream & operator<<(ostream& os, const array<Type,size>& cont) {
+	return os << to_string(cont);
+}
+
+/* Print functions */
+
+template <typename Type>
+void print(const Type& value) {
+	cout << value << endl;
+}
+
+bool boolalphaEnabled = true;
+
+template <typename Type, typename ... Args>
+void print(const Type& value, const Args& ...args) {
+	
+	boolalphaEnabled ? boolalpha(cout) : noboolalpha(cout);
+	cout << value << ' ';
+	print(args...);
+}
+
+#undef _t_
+#undef typesOf
+#undef ostreamOperator
+#undef ostreamOperatorMap

@@ -1,10 +1,3 @@
-#include <vector>
-#include <list>
-#include <deque>
-#include <initializer_list>
-#include <forward_list>
-#include <set>
-#include <unordered_set>
 #include "print.hpp"
 
 int main() {
@@ -24,8 +17,8 @@ int main() {
 	
 	// classic array of fixed lenghth
 	const size_t size = 6;
-	int array[size] = {1,2,3,4,5,6};
-	print(to_string(array,size));
+	int testArray[size] = {1,2,3,4,5,6};
+	print(to_string(testArray,size));
 	
 	string arrayString[2] = {"hello", "bye"};
 	print(to_string(arrayString,2));
@@ -154,6 +147,23 @@ int main() {
 	boolalphaEnabled = false;
 	
 	print(1 < 2, 2 > 10, 20 == 21);
+	
+	// Use of "let" and "var"
+	let numbers = {1,2,3};
+	print("This is my array:", numbers);
+	
+	var languages = vector<string>({"C++", "C", "Swift", "Java"});
+	languages.insert(languages.end(), "JavaScript");
+	print("Programming languages:", languages);
+	
+	array<int,3> numbers2 = {4,5,6};
+	print(numbers2);
+	
+	map<string,float> mapInit { {"hi", 10.1}, {"bye", 20.2} };
+	print(mapInit);
+	
+	vector<double> numbers3 = {1.2, 2.3, 7.8};
+	print(to_string(numbers3));
 	
     return 0;
 }

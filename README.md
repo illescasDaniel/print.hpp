@@ -1,7 +1,7 @@
 # print.hpp 
 
 [![Build Status](https://travis-ci.org/illescasDaniel/print.hpp.svg?branch=master)](https://travis-ci.org/illescasDaniel/print.hpp)
-[![Version](https://img.shields.io/badge/version-v1.1-green.svg)](https://github.com/illescasDaniel/print.hpp/releases/tag/v1.0)
+[![Version](https://img.shields.io/badge/version-v1.3-green.svg)](https://github.com/illescasDaniel/print.hpp/releases/tag/v1.0)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/illescasDaniel/print.hpp/blob/master/LICENCE)  
 
 With the 'print' function you can display information easily.  
@@ -30,6 +30,9 @@ to_string(const container& cont);
 · Example using both functions:  
 ```c++
 print("My vector:", to_string(vector)); // Possible output -> My vector: [1, 2, 3]
+
+// or:
+print("My vector:", vector);
 ```
 
 <br></br>
@@ -55,26 +58,15 @@ print(to_string(matrix,rows,cols)); // An output -> [[1, 2], [3, 4], [5, 6]]
 ```
 
 <br></br>
-· **to_string for maps:**  
+· **let and var macros example:**  
 ```c++
-to_string(const map<Key,Type>& map);
+let numbers = {1,2,3}; // let = const auto
+print(numbers); // Output: [1, 2, 3]
 ```
 
-· Example:  
-```c++
-print(to_string(map)); // An output -> ["hi": 20, "bye": 10]
-```
-
-// Etc
 <br></br>
 How to compile:
 -----
 ```bash
-g++ -std=c++14 main.cpp print.hpp
-```
-
-or  
-
-```bash
-g++ -std=c++14 main.cpp -I . // "." or the folder containing "print.hpp"
+g++ -std=c++14 main.cpp -I . // Where "." is the folder containing "print.hpp"
 ```

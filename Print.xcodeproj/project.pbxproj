@@ -66,8 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				65B7E4B61DAE892F00289530 /* Makefile */,
-				6519A2961D82D8EF00744BE5 /* main.cpp */,
 				6519A2971D82D8EF00744BE5 /* print.hpp */,
+				6519A2961D82D8EF00744BE5 /* main.cpp */,
 			);
 			path = Print;
 			sourceTree = "<group>";
