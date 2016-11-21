@@ -22,7 +22,7 @@ print("This is a number:", 23123); // Output -> This is a number: 23123
 ```
 
 <br></br>
-· **to_string for containers like std::vector, std::array...:**  
+· **to_string for containers like `std::vector`, `std::array`, etc:**  
 ```c++
 to_string(const container& cont); 
 ```
@@ -43,7 +43,7 @@ to_string(const T * array, size_t size);
 
 · Example:  
 ```c++
-print(to_string(array,5));
+print(to_string(array, 5));
 ```
 
 <br></br>
@@ -54,11 +54,10 @@ to_string(const Type& matrix, size_t rows, size_t cols);
 
 · Example:  
 ```c++
-print(to_string(matrix,rows,cols)); // An output -> [[1, 2], [3, 4], [5, 6]]
+print(to_string(matrix, rows, cols)); // An output -> [[1, 2], [3, 4], [5, 6]]
 ```
 
-<br></br>
-· **let and var macros example:**  
+· **`let` and `var` macros example:**  
 ```c++
 let numbers = {1,2,3}; // let = const auto
 print(numbers); // Output: [1, 2, 3]
