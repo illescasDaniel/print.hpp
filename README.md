@@ -57,6 +57,7 @@ to_string(const Type& matrix, size_t rows, size_t cols);
 print(to_string(matrix, rows, cols)); // An output -> [[1, 2], [3, 4], [5, 6]]
 ```
 
+<br></br>
 · **`let` and `var` macros example:**  
 ```c++
 let numbers = {1,2,3}; // let = const auto
