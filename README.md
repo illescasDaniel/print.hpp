@@ -62,6 +62,10 @@ print(to_string(matrix, rows, cols)); // An output -> [[1, 2], [3, 4], [5, 6]]
 ```c++
 let numbers = {1,2,3}; // let = const auto
 print(numbers); // Output: [1, 2, 3]
+
+var name = "Daniel"; // var = auto
+name = "John";
+print(name); // Output: John
 ```
 
 <br></br>
