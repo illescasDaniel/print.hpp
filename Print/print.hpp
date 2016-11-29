@@ -20,11 +20,11 @@ using namespace std;
 
 // To know if a given container is a set or not
 #define __t(_cont_) typeid(_cont_) == typeid(cont)
-#define typesOf(_cont_) __t(_cont_<int>) || __t(_cont_<double>) || __t(_cont_<bool>) || __t(_cont_<float>) || __t(_cont_<string>) || __t(_cont_<char>)
+#define is_(_cont_) __t(_cont_<int>) || __t(_cont_<double>) || __t(_cont_<bool>) || __t(_cont_<float>) || __t(_cont_<string>) || __t(_cont_<char>)
 
 template <typename Container>
 bool isSet(const Container& cont) {
-	return (typesOf(set) || typesOf(multiset) || typesOf(unordered_set) || typesOf(unordered_multiset));
+	return (is_(set) || is_(multiset) || is_(unordered_set) || is_(unordered_multiset));
 }
 
 /* TO_STRING functions */
@@ -79,7 +79,7 @@ string to_string(const Container& cont) {
 	return str;
 }
 
-// Return a string given any map type (no need to use externally)
+// Return a string given any map type (no need to use externally!)
 template <typename mapType>
 string to_stringMAP(const mapType& map) {
 	string str;
@@ -110,14 +110,15 @@ string to_string(const _map_<KeyType,ValueType>& map) { \
 	return to_stringMAP(map); \
 }
 
-to_stringMAP(map)
-to_stringMAP(multimap)
-to_stringMAP(unordered_map)
-to_stringMAP(unordered_multimap)
+to_stringMAP(map);
+to_stringMAP(multimap);
+to_stringMAP(unordered_map);
+to_stringMAP(unordered_multimap);
+
 
 // Return a string given a classic array and its size
 template <typename Type>
-string to_string(const Type * array, size_t size) {
+string to_string(const Type * array, const size_t& size) {
 	
 	string str;
 	
@@ -139,7 +140,7 @@ string to_string(const Type * array, size_t size) {
 
 // Return a string given a matrix and its size
 template <typename Type>
-string to_string(const Type& matrix, size_t rows, size_t cols) {
+string to_string(const Type& matrix, const size_t& rows, const size_t& cols) {
 	
 	string str;
 	
@@ -275,7 +276,8 @@ void print(const Type& value, const Args& ...args) {
 	print(args...);
 }
 
-#undef _t_
-#undef typesOf
+#undef __t
+#undef is_
 #undef ostreamOperator
 #undef ostreamOperatorMap
+#undef to_stringMAP
