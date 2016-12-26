@@ -168,7 +168,7 @@ int main() {
 	boolalphaEnabled = true;
 	print(1 == 2);
 	
-	// Print errors :)
+	// Print errors
 	int* i = nullptr;
 	if (i == nullptr) {
 		printError("null pointer", i);
