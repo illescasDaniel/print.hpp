@@ -261,19 +261,55 @@ ostream & operator<<(ostream& os, const array<Type,size>& cont) {
 
 /* Print functions */
 
-template <typename Type>
-void print(const Type& value) {
-	cout << value << endl;
-}
-
 bool boolalphaEnabled = true;
 
-template <typename Type, typename ... Args>
-void print(const Type& value, const Args& ...args) {
+template <typename Type>
+void print(const Type& message) {
 	
 	boolalphaEnabled ? boolalpha(cout) : noboolalpha(cout);
-	cout << value << ' ';
+	cout << message << endl;
+}
+
+template <typename Type, typename ... Args>
+void print(const Type& message, const Args& ...args) {
+	
+	boolalphaEnabled ? boolalpha(cout) : noboolalpha(cout);
+	cout << message << ' ';
 	print(args...);
+}
+
+// Print Error
+
+bool errorDisplayed = false;
+
+template <typename Type>
+void printError(const Type& message) {
+	
+	boolalphaEnabled ? boolalpha(cout) : noboolalpha(cout);
+	if (!errorDisplayed) {
+		cerr << "Error: " << message << ' ' << endl;
+	}
+	else {
+		cerr << message << ' ' << endl;
+		errorDisplayed = false;
+	}
+	
+}
+
+template <typename Type, typename ... Args>
+void printError(const Type& message, const Args& ...args) {
+	
+	boolalphaEnabled ? boolalpha(cout) : noboolalpha(cout);
+	
+	if (!errorDisplayed) {
+		cerr << "Error: " << message << ' ';
+	}
+	else {
+		cerr << message << ' ';
+	}
+	
+	errorDisplayed = true;
+	printError(args...);
 }
 
 #undef __t

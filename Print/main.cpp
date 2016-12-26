@@ -165,5 +165,14 @@ int main() {
 	vector<double> numbers3 = {1.2, 2.3, 7.8};
 	print(to_string(numbers3));
 	
+	boolalphaEnabled = true;
+	print(1 == 2);
+	
+	//
+	int* i = nullptr;
+	if (i == nullptr) {
+		printError("null pointer", i);
+	}
+	
     return 0;
 }
