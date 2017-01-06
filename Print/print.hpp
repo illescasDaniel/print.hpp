@@ -19,8 +19,8 @@
 using namespace std;
 
 // To know if a given container is a set or not
-#define __type(_cont_) typeid(_cont_) == typeid(cont)
-#define is_(_cont_) __type(_cont_<int>) || __type(_cont_<double>) || __type(_cont_<bool>) || __type(_cont_<float>) || __type(_cont_<string>) || __type(_cont_<char>)
+#define type__(_cont_) typeid(_cont_) == typeid(cont)
+#define is_(_cont_) type__(_cont_<int>) || type__(_cont_<double>) || type__(_cont_<bool>) || type__(_cont_<float>) || type__(_cont_<string>) || type__(_cont_<char>)
 
 template <typename Container>
 bool isSet(const Container& cont) {
@@ -312,7 +312,7 @@ void printError(const Type& message, const Args& ...args) {
 	printError(args...);
 }
 
-#undef __type
+#undef type__
 #undef is_
 #undef ostreamOperator
 #undef ostreamOperatorMap
