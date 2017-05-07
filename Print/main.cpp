@@ -184,5 +184,10 @@ int main() {
 	PrintSettings::separator = "-";
 	printError("hola", 10);
 	
+	//
+	
+	PrintSettings::separator = "\n ·";
+	print("Shopping list:", "tomatoes", "salt", "sugar");
+	
     return 0;
 }
