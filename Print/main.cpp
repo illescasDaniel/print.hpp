@@ -20,6 +20,9 @@ int main() {
 	int testArray[size] = {1,2,3,4,5,6};
 	print(to_string(testArray,size));
 	
+	int testArray2[] = {99,98};
+	print(to_string(testArray2));
+	
 	string arrayString[2] = {"hello", "bye"};
 	print(to_string(arrayString,2));
 	
@@ -144,7 +147,7 @@ int main() {
 	
 	print(1 < 2, 2 > 10, 20 == 21);
 	
-	boolalphaEnabled = false;
+	PrintSettings::boolalphaEnabled = false;
 	
 	print(1 < 2, 2 > 10, 20 == 21);
 	
@@ -165,7 +168,7 @@ int main() {
 	vector<double> numbers3 = {1.2, 2.3, 7.8};
 	print(to_string(numbers3));
 	
-	boolalphaEnabled = true;
+	PrintSettings::boolalphaEnabled = true;
 	print(1 == 2);
 	
 	// Print errors
@@ -173,6 +176,13 @@ int main() {
 	if (i == nullptr) {
 		printError("null pointer", i);
 	}
+	
+	PrintSettings::terminator = " :ENDLINE\n";
+	print("hola", "terminator?", "lol", bool(1));
+	
+	PrintSettings::terminator = PrintSettings::defaultTerminator;
+	PrintSettings::separator = "-";
+	printError("hola", 10);
 	
     return 0;
 }

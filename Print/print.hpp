@@ -58,7 +58,7 @@ string quotedString(const Type& data) {
 template <typename Container>
 string to_string(const Container& cont) {
 	
-	size_t size = distance(cont.begin(), cont.end()); // Necessary for forward_list, because it doesn't have a size function
+	size_t size = distance(begin(cont), end(cont)); // Necessary for forward_list, because it doesn't have a size function
 	size_t position = 0;
 	string str;
 	
@@ -261,20 +261,34 @@ ostream & operator<<(ostream& os, const array<Type,size>& cont) {
 
 /* Print functions */
 
-bool boolalphaEnabled = true;
+struct PrintSettings {
+	static bool boolalphaEnabled;
+	static string separator;
+	static string terminator;
+	const static string defaultSeparator;
+	const static string defaultTerminator;
+};
+
+bool PrintSettings::boolalphaEnabled = true;
+string PrintSettings::separator = " ";
+string PrintSettings::terminator = "\n";
+const string PrintSettings::defaultSeparator = " ";
+const string PrintSettings::defaultTerminator = "\n";
+
+//bool boolalphaEnabled = true;
 
 template <typename Type>
 void print(const Type& message) {
 	
-	boolalphaEnabled ? boolalpha(cout) : noboolalpha(cout);
-	cout << message << endl;
+	PrintSettings::boolalphaEnabled ? boolalpha(cout) : noboolalpha(cout);
+	cout << message << PrintSettings::terminator;
 }
 
 template <typename Type, typename ... Args>
 void print(const Type& message, const Args& ...args) {
 	
-	boolalphaEnabled ? boolalpha(cout) : noboolalpha(cout);
-	cout << message << ' ';
+	PrintSettings::boolalphaEnabled ? boolalpha(cout) : noboolalpha(cout);
+	cout << message << PrintSettings::separator;
 	print(args...);
 }
 
@@ -285,12 +299,12 @@ bool errorDisplayed = false;
 template <typename Type>
 void printError(const Type& message) {
 	
-	boolalphaEnabled ? boolalpha(cout) : noboolalpha(cout);
+	PrintSettings::boolalphaEnabled ? boolalpha(cout) : noboolalpha(cout);
 	if (!errorDisplayed) {
-		cerr << "Error: " << message << ' ' << endl;
+		cerr << "Error: " << message << PrintSettings::terminator;
 	}
 	else {
-		cerr << message << ' ' << endl;
+		cerr << message << PrintSettings::terminator;
 		errorDisplayed = false;
 	}
 	
@@ -299,13 +313,13 @@ void printError(const Type& message) {
 template <typename Type, typename ... Args>
 void printError(const Type& message, const Args& ...args) {
 	
-	boolalphaEnabled ? boolalpha(cout) : noboolalpha(cout);
+	PrintSettings::boolalphaEnabled ? boolalpha(cout) : noboolalpha(cout);
 	
 	if (!errorDisplayed) {
-		cerr << "Error: " << message << ' ';
+		cerr << "Error: " << message << PrintSettings::separator;
 	}
 	else {
-		cerr << message << ' ';
+		cerr << message << PrintSettings::separator;
 	}
 	
 	errorDisplayed = true;
