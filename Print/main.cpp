@@ -152,10 +152,10 @@ int main() {
 	print(1 < 2, 2 > 10, 20 == 21);
 	
 	// Use of "let" and "var"
-	let numbers = {1,2,3};
+	const auto numbers = {1,2,3};
 	print("This is my array:", numbers);
 	
-	var languages = vector<string>({"C++", "C", "Swift", "Java"});
+	auto languages = vector<string>({"C++", "C", "Swift", "Java"});
 	languages.insert(languages.end(), "JavaScript");
 	print("Programming languages:", languages);
 	
@@ -188,6 +188,8 @@ int main() {
 	
 	PrintSettings::separator = "\n ·";
 	print("Shopping list:", "tomatoes", "salt", "sugar");
+	
+	cout << "Shopping list:\n" << " · tomatoes\n" << " · salt\n" << " · sugar\n" << endl;
 	
     return 0;
 }

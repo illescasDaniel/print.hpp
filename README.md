@@ -1,7 +1,7 @@
 # print.hpp 
 
 [![Build Status](https://travis-ci.org/illescasDaniel/print.hpp.svg?branch=master)](https://travis-ci.org/illescasDaniel/print.hpp)
-[![Version](https://img.shields.io/badge/version-v1.4.1-green.svg)](https://github.com/illescasDaniel/print.hpp/releases)
+[![Version](https://img.shields.io/badge/version-v1.5-green.svg)](https://github.com/illescasDaniel/print.hpp/releases)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/illescasDaniel/print.hpp/blob/master/LICENCE)  
 
 With the 'print' function you can display information easily.  
@@ -55,17 +55,6 @@ to_string(const Type& matrix, size_t rows, size_t cols);
 · Example:  
 ```c++
 print(to_string(matrix, rows, cols)); // An output -> [[1, 2], [3, 4], [5, 6]]
-```
-
-<br></br>
-· **`let` and `var` macros example:**  
-```c++
-let numbers = {1,2,3}; // let = const auto
-print(numbers); // Output: [1, 2, 3]
-
-var name = "Daniel"; // var = auto
-name = "John";
-print(name); // Output: John
 ```
 
 <br></br>

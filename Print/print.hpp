@@ -230,11 +230,6 @@ string to_string(stack<Type> stack) {
 	return to_stringPriorityQueueORstack(stack);
 }
 
-// "let" is a constant of any type
-// "var" is a variable of any type
-#define let const auto
-#define var auto
-
 /* Operator<< overload */
 
 #define ostreamOperator(_container_) \
