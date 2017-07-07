@@ -1,5 +1,8 @@
 #include "print.hpp"
 
+using namespace std;
+using namespace evt;
+
 int main() {
 	
 	// Classic way...
@@ -18,17 +21,18 @@ int main() {
 	// classic array of fixed lenghth
 	const size_t size = 6;
 	int testArray[size] = {1,2,3,4,5,6};
-	print(to_string(testArray,size));
+	print(to_string(testArray));
+	print("Hi", to_string(testArray), "cool, hah?");
 	
 	int testArray2[] = {99,98};
 	print(to_string(testArray2));
 	
 	string arrayString[2] = {"hello", "bye"};
-	print(to_string(arrayString,2));
+	print(to_string(arrayString));
 	
 	// classic array, pointer
 	int * array2 = new int[3] {1,2,3};
-	print(to_string(array2,3));
+	print(to_string(array2, 3));
 	delete[] array2;
 	
 	// Matrix

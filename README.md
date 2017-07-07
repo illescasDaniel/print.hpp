@@ -1,10 +1,10 @@
 # print.hpp 
 
 [![Build Status](https://travis-ci.org/illescasDaniel/print.hpp.svg?branch=master)](https://travis-ci.org/illescasDaniel/print.hpp)
-[![Version](https://img.shields.io/badge/version-v1.5-green.svg)](https://github.com/illescasDaniel/print.hpp/releases)
+[![Version](https://img.shields.io/badge/version-v1.6-green.svg)](https://github.com/illescasDaniel/print.hpp/releases)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/illescasDaniel/print.hpp/blob/master/LICENCE)  
 
-With the 'print' function you can display information easily.  
+With the 'evt::print()' function you can display information easily.  
 The 'to_string' function let you convert ANY data container (like std::vector) to string.
 <br></br>
 
