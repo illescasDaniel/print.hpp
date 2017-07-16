@@ -84,7 +84,7 @@ namespace evt {
 		
 		str += isSet(cont) ? "{" : "[";
 		
-		for (auto value: cont) {
+		for (const auto& value: cont) {
 			
 			str += quotedString(value);
 			
@@ -107,7 +107,7 @@ namespace evt {
 		
 		str += "[";
 		
-		for (auto value: map) {
+		for (const auto& value: map) {
 			
 			str += quotedString(value.first) + ": " + quotedString(value.second);
 			
@@ -292,15 +292,13 @@ return os << to_string(cont); \
 	
 	template <typename Type>
 	void print(const Type& message) {
-		
-		PrintSettings::boolalphaEnabled ? boolalpha(std::cout) : noboolalpha(std::cout);
+		PrintSettings::boolalphaEnabled ? std::boolalpha(std::cout) : std::noboolalpha(std::cout);
 		std::cout << message << PrintSettings::terminator;
 	}
 	
 	template <typename Type, typename ... Args>
 	void print(const Type& message, const Args& ...args) {
-		
-		PrintSettings::boolalphaEnabled ? boolalpha(std::cout) : noboolalpha(std::cout);
+		PrintSettings::boolalphaEnabled ? std::boolalpha(std::cout) : std::noboolalpha(std::cout);
 		std::cout << message << PrintSettings::separator;
 		print(args...);
 	}
@@ -312,7 +310,7 @@ return os << to_string(cont); \
 	template <typename Type>
 	void printError(const Type& message) {
 		
-		PrintSettings::boolalphaEnabled ? boolalpha(std::cout) : noboolalpha(std::cout);
+		PrintSettings::boolalphaEnabled ? std::boolalpha(std::cout) : std::noboolalpha(std::cout);
 		if (!errorDisplayed) {
 			std::cerr << "Error: " << message << PrintSettings::terminator;
 		}
@@ -325,7 +323,7 @@ return os << to_string(cont); \
 	template <typename Type, typename ... Args>
 	void printError(const Type& message, const Args& ...args) {
 		
-		PrintSettings::boolalphaEnabled ? boolalpha(std::cout) : noboolalpha(std::cout);
+		PrintSettings::boolalphaEnabled ? std::boolalpha(std::cout) : std::noboolalpha(std::cout);
 		
 		if (!errorDisplayed) {
 			std::cerr << "Error: " << message << PrintSettings::separator;
@@ -344,5 +342,4 @@ return os << to_string(cont); \
 #undef ostreamOperator
 #undef ostreamOperatorMap
 #undef to_stringMAP
-
 
